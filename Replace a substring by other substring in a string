@@ -1,0 +1,40 @@
+//replace a substring with other substring without using inbuild function
+
+var str = "My name is Shivani Singh";
+const word = "Shivani";
+const newWord = "Rahul";
+var temp = "";
+var k=0;
+var index = 0;
+var part1 = "";
+var part2 = "";
+function includeDemo(sentance, word) {
+    for(i=0; i<sentance.length-word.length; i++){
+   var j = i; 
+    do{  
+       
+    if(sentance.charAt(j) == word.charAt(k)){
+      temp=  temp.concat(sentance.charAt(j))
+         k++;
+    }
+       j++;
+    }
+    while( k<word.length)
+    
+    if(temp == word){
+    index = j;
+    break;
+    }
+    }
+    
+    for(i=0; i<index-word.length; i++){
+        part1 = part1.concat(sentance.charAt(i))
+    }
+    for(i=index; i<sentance.length; i++){
+          part2 = part2.concat(sentance.charAt(i))
+    }
+    
+  console.log(part1.concat(newWord).concat(part2))
+}
+    
+includeDemo(str, word);
