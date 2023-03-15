@@ -1,0 +1,13 @@
+const word = "keerti"
+ 
+ var subs = [];
+ for(var i=0; i<word.length; i++) {
+     subs.push(word.charAt(i));
+     var temp= word.charAt(i);
+     for(var j=i+1; j<word.length; j++) {
+     temp = temp.concat(word.charAt(j));
+     subs.push(temp)
+     }
+ }
+ 
+ console.log(subs)
