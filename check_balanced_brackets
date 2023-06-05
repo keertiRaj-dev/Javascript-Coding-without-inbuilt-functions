@@ -1,0 +1,58 @@
+//check balanced brackets
+
+const demo1 = "({{[]}})"
+const demo2 = "((())"
+const demo3 = "([)]"
+
+function balance(brackets) {
+    var stack = [];
+    var flag = 0;
+    if(brackets.length%2 !=0){
+        console.log(brackets + " is not balanced");
+        flag++;
+    }
+    else{
+        for(var i=0; i<brackets.length; i++){
+            if(brackets[i]=="(" || brackets[i]=="{" || brackets[i]=="[" ) {
+                stack.push(brackets[i])
+            }
+            else if(brackets[i]==")"){
+                if(stack[stack.length-1]=="("){
+                    stack.pop()
+                }
+                else{
+                    console.log(brackets + " is not balanced");
+                    flag++;
+                    break;
+                }
+            }
+            else if(brackets[i]=="]"){
+                if(stack[stack.length-1]=="["){
+                    stack.pop()
+                }
+                else{
+                    console.log(brackets + " is not balanced");
+                    flag++;
+                    break;
+                }
+            }
+            else if(brackets[i]=="}"){
+                if(stack[stack.length-1]=="{"){
+                    stack.pop()
+                }
+                else{
+                    console.log(brackets + " is not balanced");
+                    flag++;
+                    break;
+                }
+            }
+            
+        }
+        
+        if(flag==0){
+            console.log(brackets + " is balanced")
+        }
+    }
+}
+
+balance(demo3);
