@@ -1,0 +1,15 @@
+//Frequency of elements
+
+const arr = ["my", "name", "is", "keerti", "my", "name", "my"]
+
+var obj = {};
+for(var i=0; i<arr.length; i++) {
+     if(obj[arr[i]]){
+         obj[arr[i]]++
+     }
+     else{
+         obj[arr[i]]=1
+     }
+ }
+ 
+ console.log(obj)
