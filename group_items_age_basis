@@ -1,0 +1,16 @@
+//Group items on the basis of age
+const people = [{name: "keerti", age: 26}, {name: "shamita", age:28}, {name: "priya", age:26}, {name: "jags", age:28}]
+
+var group = {};
+
+
+for(var i=0; i<people.length; i++){
+    if(group[people[i].age]){
+        group[people[i].age].push(people[i].name)
+    }
+    else{
+        group[people[i].age] = [people[i].name]
+    }
+}
+
+console.log(group)
